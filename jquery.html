@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <h2>Letakkan kursor ke masing-masing kotak untuk melihat gambar</h2>
+    <div id="div1">Hewan Kucing</div>
+    <div id="div2">Bebek</div>
+    <div id="div3">Ayam</div>
+    
+    <audio id="audio1" src="sound/cat-meow-14536.mp3"></audio>
+    <audio id="audio2" src="sound/075176_duck-quack-40345.mp3"></audio>
+    <audio id="audio3" src="sound/rooster-cry-173621.mp3"></audio>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $("document").ready(function () {
+            $("#div1").mouseover(function () {
+                $(this).css({
+                    background: "url('https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2021/10/26071254/mengenal-fakta-menarik-seputar-kucing-anggora-turki-halodoc.jpg.webp')"
+                });
+                document.getElementById('audio1').play();
+            });
+
+            $("#div2").mouseover(function () {
+                $(this).css({
+                    background: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/White_domesticated_duck%2C_stretching.jpg/1200px-White_domesticated_duck%2C_stretching.jpg')"
+                });
+                document.getElementById('audio2').play();
+            });
+            
+            $("#div3").mouseover(function () {
+                $(this).css({
+                    background: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Ayam_Pelung.jpg/1200px-Ayam_Pelung.jpg')"
+                });
+                document.getElementById('audio3').play();
+            });
+
+            $("div").mouseout(function () {
+                $(this).css({
+                    background: "green"
+                });
+            });
+
+            $("#div1").mouseout(function () {
+                $(this).css({
+                    background: "green"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
